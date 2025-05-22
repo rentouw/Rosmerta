@@ -18,9 +18,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
-import com.rentouw.rosmerta.ui.MainViewModel // Make sure this path is correct
-import com.rentouw.rosmerta.ui.theme.RosmertaTheme // Make sure this path is correct
+import com.rentouw.rosmerta.ui.MainViewModel
+import com.rentouw.rosmerta.ui.theme.RosmertaTheme
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
 
 @AndroidEntryPoint // For Hilt
 class MainActivity : ComponentActivity() {
@@ -60,7 +61,7 @@ fun BatteryScreen(viewModel: MainViewModel, modifier: Modifier = Modifier) {
         } else {
             items(batteryLogs) { log ->
                 // Consider creating a dedicated Composable for the log item for better structure
-                Text("Time: ${log.timestamp}, Level: ${log.level}%, Charging: ${log.isCharging}")
+                Text("Time: ${log.calendar.get(Calendar.HOUR_OF_DAY)}:${log.calendar.get(Calendar.MINUTE)}:${log.calendar.get(Calendar.SECOND)}, Level: ${log.level}%, Charging: ${log.isCharging}")
             }
         }
     }
@@ -84,7 +85,7 @@ fun BatteryScreenPreview() {
                 com.rentouw.lifelogging_battery.model.BatteryInfo(System.currentTimeMillis(), 80, false),
                 com.rentouw.lifelogging_battery.model.BatteryInfo(System.currentTimeMillis() - 3600000, 70, true)
             )) { log ->
-                Text("Time: ${log.timestamp}, Level: ${log.level}%, Charging: ${log.isCharging}")
+                Text("Time: ${log.calendar.get(Calendar.HOUR_OF_DAY)}:${log.calendar.get(Calendar.MINUTE)}:${log.calendar.get(Calendar.SECOND)}, Level: ${log.level}%, Charging: ${log.isCharging}")
             }
         }
     }

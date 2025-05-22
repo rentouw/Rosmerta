@@ -6,6 +6,7 @@ import com.rentouw.lifelogging_battery.domain.BatteryRepository
 import com.rentouw.lifelogging_battery.model.BatteryInfo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.util.Calendar
 import javax.inject.Inject
 
 class BatteryRepositoryImpl @Inject constructor(
@@ -16,7 +17,8 @@ class BatteryRepositoryImpl @Inject constructor(
         val log = BatteryLogEntity(
             timestamp = System.currentTimeMillis(),
             level = currentLevel,
-            isCharging = isCharging
+            isCharging = isCharging,
+            calender = Calendar.getInstance().apply { timeInMillis = System.currentTimeMillis() }
         )
         batteryDao.insertLog(log)
     }
@@ -27,7 +29,8 @@ class BatteryRepositoryImpl @Inject constructor(
                 BatteryInfo( // Map Entity to Domain model
                     timestamp = entity.timestamp,
                     level = entity.level,
-                    isCharging = entity.isCharging
+                    isCharging = entity.isCharging,
+                    calendar = entity.calender
                 )
             }
         }
@@ -38,7 +41,8 @@ class BatteryRepositoryImpl @Inject constructor(
             BatteryInfo(
                 timestamp = entity.timestamp,
                 level = entity.level,
-                isCharging = entity.isCharging
+                isCharging = entity.isCharging,
+                calendar = entity.calender
             )
         }
     }
