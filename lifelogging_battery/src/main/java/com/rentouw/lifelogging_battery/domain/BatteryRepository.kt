@@ -1,4 +1,4 @@
-package com.rentouw.lifelogging_battery.repository
+package com.rentouw.lifelogging_battery.domain
 
 import com.rentouw.lifelogging_battery.model.BatteryInfo
 import kotlinx.coroutines.flow.Flow
