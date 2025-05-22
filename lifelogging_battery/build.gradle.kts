@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rentouw.feature_lifelogging_battery"
+    namespace = "com.rentouw.lifelogging_battery"
     compileSdk = 35
 
     defaultConfig {
@@ -39,9 +39,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(project(":data_local"))
-    implementation("com.google.dagger:hilt-android:2.56.2")
+    implementation(libs.hilt.android)
     implementation(libs.transport.runtime)
-    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+    ksp(libs.hilt.android.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

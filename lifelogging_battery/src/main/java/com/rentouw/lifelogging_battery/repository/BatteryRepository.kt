@@ -1,6 +1,6 @@
-package com.rentouw.feature_lifelogging_battery.repository
+package com.rentouw.lifelogging_battery.repository
 
-import com.rentouw.feature_lifelogging_battery.model.BatteryInfo
+import com.rentouw.lifelogging_battery.model.BatteryInfo
 import kotlinx.coroutines.flow.Flow
 
 interface BatteryRepository {

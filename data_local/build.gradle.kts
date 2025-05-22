@@ -33,17 +33,17 @@ android {
     }
 }
 // data_local/build.gradle.kts
-val room_version = "2.7.1" // Check for the latest version
+val roomVersion = "2.7.1" // Check for the latest version
 
 dependencies {
-    implementation("androidx.room:room-runtime:$room_version")
-    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
     // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room:room-compiler:$room_version") // Replace annotationProcessor with ksp
+    ksp(libs.androidx.room.compiler) // Replace annotationProcessor with ksp
     // To use Coroutines and Flow with Room
-    implementation("androidx.room:room-ktx:$room_version")
-    implementation("com.google.dagger:hilt-android:2.56.2")
-    ksp("com.google.dagger:hilt-android-compiler:2.56.2")
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

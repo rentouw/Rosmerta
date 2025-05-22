@@ -17,6 +17,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import com.rentouw.rosmerta.ui.MainViewModel // Make sure this path is correct
 import com.rentouw.rosmerta.ui.theme.RosmertaTheme // Make sure this path is correct
 import dagger.hilt.android.AndroidEntryPoint
@@ -67,25 +68,9 @@ fun BatteryScreen(viewModel: MainViewModel, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    RosmertaTheme {
-        // Since the preview can't easily get a Hilt ViewModel,
-        // you might need a mock ViewModel or a simpler preview if this causes issues.
-        // For now, let's assume it can render a basic layout or you handle ViewModel creation
-        // specifically for previews if needed.
-        // For a simple preview, you could pass a dummy list:
-        // BatteryScreenPreview()
-        Text("Preview of Battery Screen Area")
-    }
-}
-
-/*
-// Optional: If you want a preview that doesn't depend on the ViewModel directly for basic layout
-@Preview(showBackground = true)
-@Composable
 fun BatteryScreenPreview() {
     RosmertaTheme {
-        LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        LazyColumn(modifier = Modifier.fillMaxSize().padding(Dp(16F))) {
             item {
                 Button(onClick = { }) {
                     Text("Log Current Battery Status")
@@ -94,14 +79,13 @@ fun BatteryScreenPreview() {
             item {
                 Text("No battery logs yet. Click the button to log current status.")
             }
-            items(listOf(
+            this.items(listOf(
                 // Dummy data for preview
-                // com.rentouw.rosmerta.battery.domain.model.BatteryInfo(System.currentTimeMillis(), 80, false),
-                // com.rentouw.rosmerta.battery.domain.model.BatteryInfo(System.currentTimeMillis() - 3600000, 70, true)
+                com.rentouw.lifelogging_battery.model.BatteryInfo(System.currentTimeMillis(), 80, false),
+                com.rentouw.lifelogging_battery.model.BatteryInfo(System.currentTimeMillis() - 3600000, 70, true)
             )) { log ->
-                 Text("Time: ${log.timestamp}, Level: ${log.level}%, Charging: ${log.isCharging}")
+                Text("Time: ${log.timestamp}, Level: ${log.level}%, Charging: ${log.isCharging}")
             }
         }
     }
 }
-*/

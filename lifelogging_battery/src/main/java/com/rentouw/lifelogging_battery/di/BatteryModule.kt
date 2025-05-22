@@ -1,8 +1,8 @@
-package com.rentouw.feature_lifelogging_battery.di
+package com.rentouw.lifelogging_battery.di
 
 import com.rentouw.data_local.dao.BatteryDao
-import com.rentouw.feature_lifelogging_battery.data.BatteryRepositoryImpl
-import com.rentouw.feature_lifelogging_battery.repository.BatteryRepository
+import com.rentouw.lifelogging_battery.data.BatteryRepositoryImpl
+import com.rentouw.lifelogging_battery.repository.BatteryRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

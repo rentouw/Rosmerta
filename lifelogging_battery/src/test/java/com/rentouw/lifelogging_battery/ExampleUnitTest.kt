@@ -1,4 +1,4 @@
-package com.rentouw.feature_lifelogging_battery
+package com.rentouw.lifelogging_battery
 
 import org.junit.Test
 

@@ -1,9 +1,9 @@
-package com.rentouw.feature_lifelogging_battery.data
+package com.rentouw.lifelogging_battery.data
 
 import com.rentouw.data_local.dao.BatteryDao
 import com.rentouw.data_local.model.BatteryLogEntity
-import com.rentouw.feature_lifelogging_battery.model.BatteryInfo
-import com.rentouw.feature_lifelogging_battery.repository.BatteryRepository
+import com.rentouw.lifelogging_battery.model.BatteryInfo
+import com.rentouw.lifelogging_battery.repository.BatteryRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

@@ -6,8 +6,8 @@ import android.content.IntentFilter
 import android.os.BatteryManager
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rentouw.feature_lifelogging_battery.model.BatteryInfo
-import com.rentouw.feature_lifelogging_battery.repository.BatteryRepository
+import com.rentouw.lifelogging_battery.model.BatteryInfo
+import com.rentouw.lifelogging_battery.repository.BatteryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.SharingStarted

@@ -21,5 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Rosmerta"
 include(":app")
-include(":feature_lifelogging_battery")
+include(":lifelogging_battery")
 include(":data_local")

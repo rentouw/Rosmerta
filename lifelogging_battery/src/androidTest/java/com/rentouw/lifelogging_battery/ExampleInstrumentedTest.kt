@@ -1,4 +1,4 @@
-package com.rentouw.feature_lifelogging_battery
+package com.rentouw.lifelogging_battery
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
